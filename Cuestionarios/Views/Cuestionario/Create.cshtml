@@ -1,0 +1,24 @@
+﻿@model CUEST_ACCESS.cuestionarios
+
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                Nombre
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.nombreCuestionario, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Create" class="btn btn-default" />
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,26 @@
+﻿@model List<CUEST_ACCESS.cuestionarios>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table mio">
+    <thead>
+        <tr>
+            <th>
+                nombre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.nombreCuestionario
+            </td>
+        </tr>
+    }
+
+</table>
+
