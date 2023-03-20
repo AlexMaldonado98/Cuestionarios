@@ -16,10 +16,25 @@ namespace CUEST_ACCESS
                                 select a;
             return cuestionarios.ToList();
         }
-        public void Agregar(cuestionarios item)
+
+        public List<preguntas> ListarPreguntas()
+        {
+            var preguntas = from a in db.preguntas
+                                select a;
+            return preguntas.ToList();
+        }
+
+        public List<preguntas> ListarPreguntasWhere(int id)
+        {
+            var preguntas = from a in db.preguntas
+                            where a.idCuestionario == id select a;
+            return preguntas.ToList();
+        }
+        public void Agregar(CUEST_ACCESS.cuestionarios item)
         {
             db.cuestionarios.Add(item);
             db.SaveChanges();
         }
+
     }
 }

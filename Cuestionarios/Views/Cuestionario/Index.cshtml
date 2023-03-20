@@ -1,26 +1,30 @@
-﻿@model List<CUEST_ACCESS.cuestionarios>
+﻿@model IEnumerable<CUEST_ACCESS.preguntas>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table mio">
-    <thead>
-        <tr>
-            <th>
-                nombre del cuestionario
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+<p>@Html.ActionLink("Crear un nuevo cuestionario", "Create")</p>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @item.nombreCuestionario
-            </td>
-        </tr>
-    }
+<h2>Filtrar preguntas</h2>
 
-</table>
+@using (Html.BeginForm())
+ {
+    @Html.DropDownList("cuest", new SelectList(ViewBag.cuestionarios,"id","nombreCuestionario"), "-- Seleccione un examen --")
 
+    <button type="submit">Buscar</button>
+ }
+
+
+
+@if (ViewBag.Error != null)
+ {
+    <p>@ViewBag.Error</p>
+ }
+ else if (Model != null && Model.Any())
+ {
+    <h3>Preguntas encontradas:</h3>
+
+    <ul>
+        @foreach (var pregunta in Model)
+         {
+            <li>@pregunta.descripcion</li>
+         }
+    </ul>
+ }

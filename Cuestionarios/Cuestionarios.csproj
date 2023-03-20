@@ -215,7 +215,7 @@
     <Content Include="Views\Cuestionario\Index.cshtml" />
     <Content Include="Views\Cuestionario\Create.cshtml" />
     <Content Include="Views\Shared\_CuestionarioDetalles.cshtml" />
-    <Content Include="Views\Shared\_parcial2.cshtml" />
+    <Content Include="Views\Shared\_Preguntas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,30 @@
+﻿@model List<CUEST_ACCESS.preguntas>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table mio">
+    <thead>
+        <tr>
+            <th>
+                Pregunta
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.descripcion
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.Partial("/Views/Shared/_Pregunta.cshtml")
+</p>
+
+
